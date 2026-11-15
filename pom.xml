@@ -35,4 +35,41 @@
     </plugins>
     <finalName>Food-system-xyz</finalName>
   </build>
+  minikube start --driver=docker
+  minikube status
+  minikube kubectl -- get pods -A
+  minikube dashboard
+  minikube kubectl -- create deployment mynginx --image=nginx
+  minikube kubectl -- get deployments
+  minikube kubectl -- get pods
+  minikube kubectl -- describe pods
+  minikube kubectl -- expose deployment mynginx --type=NodePort --port=80 --target-port=80
+  minikube kubectl -- scale deployment mynginx --replicas=4
+  minikube kubectl -- get pods
+  minikube kubectl -- get services
+  minikube kubectl -- get service mynginx
+  minikube kubectl -- port-forward svc/mynginx 8082:80
+  http://localhost:8082
+  Alternative – Use Minikube Tunnel
+  minikube tunnel
+  minikube service mynginx --url
+  minikube kubectl -- delete deployment mynginx
+  minikube kubectl -- delete service mynginx
+  minikube stop
+  minikube delete
+  NAGIOS MONITORING USING DOCKER
+  docker --version
+  docker ps
+  docker pull jasonrivers/nagios:latest
+  docker images
+  docker run -d --name nagiosdemo -p 8888:80 jasonrivers/nagios:latest
+  docker ps
+  http://localhost:8888
+    Username: nagiosadmin
+    Password: nagios
+  docker logs nagiosdemo
+  docker stop nagiosdemo
+  docker rm nagiosdemo
+  docker images
+  docker rmi jasonrivers/nagios:latest
 </project>
