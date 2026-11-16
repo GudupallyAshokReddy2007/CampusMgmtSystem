@@ -38,6 +38,36 @@ services:
 docker compose up -d
 docker compose ps
 http://localhost:8080
+
+
+
+version: "3.9"
+
+services:
+
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    depends_on:
+      - redis
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo
+      POSTGRES_DB: demo_db
+
+  redis:
+    image: redis:alpine
+
+docker compose up -d
+docker compose ps
+
+http://localhost:8080  because we use port
+
+
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
