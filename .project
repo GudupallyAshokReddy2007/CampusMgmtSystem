@@ -74,3 +74,46 @@ http://localhost:8080  because we use port
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
 </projectDescription>
+
+
+
+
+
+
+
+
+pipeline {
+    agent any
+
+    tools {
+        maven 'MAVEN-HOME'
+    }
+
+    stages {
+
+        stage('Git Clone & Clean') {
+            steps {
+                bat 'git clone https://github.com/GudupallyAshokReddy2007/maven-java-project.git'
+                bat 'mvn clean -f maven-java-project/pom.xml'
+            }
+        }
+
+        stage('Install') {
+            steps {
+                bat 'mvn install -f maven-java-project/pom.xml'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'mvn test -f maven-java-project/pom.xml'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                bat 'mvn package -f maven-java-project/pom.xml'
+            }
+        }
+    }
+}
