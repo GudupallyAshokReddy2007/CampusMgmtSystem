@@ -15,6 +15,29 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+Create a new folder named:
+docker --version
+docker compose version
+
+version: "3.9"
+
+services:
+
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo
+      POSTGRES_DB: demo_db
+
+docker compose up -d
+docker compose ps
+http://localhost:8080
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
