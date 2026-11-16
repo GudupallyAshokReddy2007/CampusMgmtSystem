@@ -63,6 +63,34 @@
           <artifactId>maven-install-plugin</artifactId>
           <version>3.1.2</version>
         </plugin>
+docker --version
+docker pull redis
+docker run --name my-redis -d redis
+docker ps
+docker exec -it my-redis redis-cli
+docker stop my-redis
+docker start my-redis
+Working with Dockerfile
+create Dockerfile in vs code
+
+FROM redis:latest
+
+CMD ["redis-server"]
+
+ open terminal cd C:\DockerProjects\Redis
+docker build -t redisnew .
+docker run --name myredisnew -d redisnew
+docker ps
+
+Open Docker Hub
+docker login
+docker ps -a
+docker commit 0e993d2009a1 budarajumadhurika/redis1
+docker images
+Push the image to Docker Hub
+docker push ashok123/redis1
+docker pull ashok123/redis1
+
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>3.1.2</version>
