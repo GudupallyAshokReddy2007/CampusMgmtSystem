@@ -45,3 +45,17 @@ docker --version	Check Docker
 40	minikube logs	Cluster logs
 41	minikube update-check	Check updates
 42	minikube update	Update Minikube
+
+
+
+
+
+Nagios login credentials
+Username
+
+nagiosadmin
+
+
+Password
+
+nagios
