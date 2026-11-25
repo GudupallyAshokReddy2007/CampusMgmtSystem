@@ -99,3 +99,9 @@ docker pull ashok123/redis1
     </pluginManagement>
   </build>
 </project>
+
+
+
+
+<role rolename="manager-script"/>
+<user username="admin" password="admin123" roles="manager-script"/>
