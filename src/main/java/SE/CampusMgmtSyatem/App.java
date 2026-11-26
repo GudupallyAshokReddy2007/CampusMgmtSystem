@@ -18,3 +18,6 @@ git remote -v
 git remote set-url origin https://github.com/YourUsername/YourRepository.git
 git config user.name "Your Name"
 git config user.email "your-email@gmail.com"
+
+
+https://github.com/yaswanthreddymarla2k6-lang/Sample_Maven_Web.git
